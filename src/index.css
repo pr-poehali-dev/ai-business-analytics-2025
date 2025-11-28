@@ -46,14 +46,9 @@
     --neon-cyan: 189 100% 50%;
     --neon-purple: 282 100% 50%;
     --neon-green: 164 100% 50%;
-    --neon-orange: 30 100% 50%;
+    --company-atlassian: 214 100% 50%;
     --company-sber: 120 61% 50%;
-    --company-vtb: 221 83% 53%;
-    --company-alfa: 0 79% 63%;
-    --company-yandex: 48 100% 50%;
-    --company-rostelecom: 262 83% 58%;
-    --company-mts: 0 100% 50%;
-    --company-gazprom: 214 100% 50%;
+    --company-ramax: 282 83% 58%;
   }
 
   .dark {
