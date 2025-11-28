@@ -67,6 +67,15 @@ export default {
 					purple: 'hsl(var(--neon-purple))',
 					green: 'hsl(var(--neon-green))',
 					orange: 'hsl(var(--neon-orange))'
+				},
+				company: {
+					sber: 'hsl(var(--company-sber))',
+					vtb: 'hsl(var(--company-vtb))',
+					alfa: 'hsl(var(--company-alfa))',
+					yandex: 'hsl(var(--company-yandex))',
+					rostelecom: 'hsl(var(--company-rostelecom))',
+					mts: 'hsl(var(--company-mts))',
+					gazprom: 'hsl(var(--company-gazprom))'
 				}
 			},
 			borderRadius: {
