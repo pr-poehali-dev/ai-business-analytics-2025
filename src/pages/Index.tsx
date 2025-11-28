@@ -73,8 +73,7 @@ const companies: Company[] = [
           { text: "Интегрирован с внутренними BI-системами (например, «Навигатор BI»)" }
         ],
         result: "Сокращение времени на подготовку аналитических отчётов на 50–70%. Уменьшение зависимости от IT-специалистов: аналитики самостоятельно получают данные и проверяют гипотезы.",
-        sourceUrl: "https://navigator.sberanalytics.ru/",
-        imageUrl: "https://cdn.poehali.dev/files/e5853c57-c48a-47d3-be07-736e2627c24f.png"
+        sourceUrl: "https://navigator.sberanalytics.ru/"
       },
       {
         title: "SaluteRPA — программный продукт для анализа больших данных с ИИ",
