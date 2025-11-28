@@ -26,54 +26,30 @@ const companies: Company[] = [
     solutionColor: "company-sber",
     solutions: [
       {
-        title: "Аналитик-помощник",
+        title: "БА - генератор идей",
         date: "2023–2024",
-        description: "ИИ-агент для процессной аналитики, автоматизирует создание отчётов и проверку гипотез",
+        description: "ИИ-агент, который самостоятельно вычисляет ключевые метрики, тестирует десятки гипотез, выявляет корневые причины неэффективностей и формирует детализированные отчёты с рекомендациями. Не заменяет эксперта — усиливает его, беря на себя рутину: поиск связей, генерацию гипотез и формирование решений.",
         result: "Сократил время отчётов на 70%, проверяет 10+ гипотез одновременно",
         sourceUrl: "https://lenta.ru/news/2025/11/20/na-ai-journey-sber-predstavil-novogo-ii-agenta-dlya-protsessnoy-analitiki/"
       },
+
       {
-        title: "Автоматизация KPI",
+        title: "БА - прогнозирование User Story и бизнес-показателей",
         date: "2023",
-        description: "Умный ассистент для бизнеса на базе GigaChat, помогает отслеживать показатели",
-        result: "Сократил ручной труд на 60%, ускорил решения на 40%",
-        sourceUrl: "https://developers.sber.ru/help/gigachat-api/ai-assistant-for-business"
-      },
-      {
-        title: "Прогнозирование клиентов",
-        date: "2023",
-        description: "ML-решение для анализа поведения клиентов и предсказания оттока",
+        description: "Помогает БА заранее видеть, как будут вести себя клиенты и ключевые показатели (продажи, спрос, заявки и др.), используя продвинутые модели анализа временных рядов. На основе исторических данных ИИ выявляет скрытые тренды, тестирует разные сценарии и даёт точные прогнозы — чтобы принимать решения быстрее, увереннее и с меньшим риском.",
         result: "Повысил точность прогнозов оттока на 35%",
         sourceUrl: "https://consult-cct.ru/reshenie-sbera-pomozhet-biznesu-luchshe-prognozirovat-povedenie-klientov"
       },
+
+
       {
-        title: "ИИ в «СберБизнес»",
+        title: "БА - поиск больших данных",
         date: "2024",
-        description: "Встроенный ИИ-ассистент для аналитики в реальном времени без IT-отдела",
-        result: "Аналитика в реальном времени — без IT-запросов",
-        sourceUrl: "https://www.cnews.ru/news/line/2025-10-22_ii-assistent_v_sberbiznese"
-      },
-      {
-        title: "Анализ текстов",
-        date: "2023",
-        description: "NLP-сервис для анализа обращений клиентов и выявления проблемных точек",
-        result: "Выявляет боли клиентов с 92% точностью",
-        sourceUrl: "https://www.cnews.ru/news/line/2023-10-06_biznesu_dostupen_servis"
-      },
-      {
-        title: "Аналитика 2.0",
-        date: "2024",
-        description: "Обновлённый Навигатор BI с поддержкой естественных запросов к данным",
-        result: "Работа с ИИ без кода — рост продуктивности на 50%",
+        description: "Диалог с данными на естественном языке — без кода, без формул. Задай вопрос — получи визуализацию, отчёт или инсайт за секунды. Поддержка PDF, суммаризация, описания дэшбордов, подключение внешних агентов через «Супервизор».",
+        result: "Аналитика без барьеров — продуктивность +50% за счёт ИИ, а не ручного труда.",
         sourceUrl: "https://vladimir.mk.ru/economics/2025/11/20/ot-zaprosa-k-deshbordu-za-schitannye-sekundy-na-ai-journey-predstavlen-obnovlyonnyy-navigator-bi-sbera.html"
-      },
-      {
-        title: "Оптимизация бюджетов",
-        date: "2024",
-        description: "ИИ-система для управления маркетинговыми расходами и распределения бюджета",
-        result: "ROI маркетинга вырос на 25%",
-        sourceUrl: "https://sber.pro/publication/sber-i-minfin-zadeistvuyut-iskusstvennii-intellekt-v-upravlenii-byudzhetom/"
       }
+
     ]
   },
   {
@@ -83,10 +59,10 @@ const companies: Company[] = [
     solutionColor: "company-vtb",
     solutions: [
       {
-        title: "ИИ-ассистент в «ВТБ Аналитика»",
+        title: "ИИ-помощник БА: прогноз спроса клиентов",
         date: "2024",
-        description: "Интеллектуальная платформа для создания дашбордов и прогнозирования потребностей клиентов",
-        result: "Сократил время дашбордов на 65%, повысил вовлечённость в стратегию",
+        description: "Платформа для быстрого создания дашбордов + ИИ, который предсказывает, какие продукты нужны клиентам — на основе транзакций и поведения.",
+        result: "Дашборды в 3 раза быстрее. Вовлечённость в стратегию — выше.",
         sourceUrl: "https://finuslugi.ru/navigator/news/novosti_bankovskoj_otrasli/vtb_razrabatyvaet_ii_assistenta_dlya_prognozirovaniya_potrebnostej_klientov"
       }
     ]
@@ -180,10 +156,10 @@ const Index = () => {
         
         <div className="relative z-10 text-center max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-green bg-clip-text text-transparent animate-fade-in">
-            ИИ в бизнес-аналитике: неоновые кейсы 2025
+            ИИ в сфере бизнес-анализа: кейсы крупных российских компаний
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-medium animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Как крупнейшие российские компании автоматизируют работу бизнес-аналитиков с помощью искусственного интеллекта — в стиле будущего
+            Как крупнейшие российские компании автоматизируют работку бизнес-аналитиков с помощью искусственного интеллекта
           </p>
         </div>
       </header>
