@@ -8,6 +8,7 @@ interface AISolution {
   description: string;
   result: string;
   sourceUrls: string[];
+  imageUrl?: string;
 }
 
 interface Company {
@@ -33,7 +34,8 @@ const companies: Company[] = [
         sourceUrls: [
           "https://vladimir.mk.ru/economics/2025/11/20/ot-zaprosa-k-deshbordu-za-schitannye-sekundy-na-ai-journey-predstavlen-obnovlyonnyy-navigator-bi-sbera.html",
           "https://developers.sber.ru/help/gigachat-api/ai-assistant-for-business"
-        ]
+        ],
+        imageUrl: "https://cdn.poehali.dev/files/e5853c57-c48a-47d3-be07-736e2627c24f.png"
       }
     ]
   },
@@ -162,6 +164,16 @@ const Index = () => {
                         borderColor: `hsl(var(--company-${company.solutionColor.replace('company-', '')}))`,
                       }}
                     >
+                      {solution.imageUrl && (
+                        <div className="mb-4 -mx-5 -mt-5 rounded-t-xl overflow-hidden">
+                          <img 
+                            src={solution.imageUrl} 
+                            alt={solution.title}
+                            className="w-full h-auto object-cover"
+                          />
+                        </div>
+                      )}
+                      
                       <div className="flex items-start gap-2 mb-2">
                         <Icon 
                           name="Bot" 
