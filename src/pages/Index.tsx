@@ -7,7 +7,7 @@ interface AISolution {
   date: string;
   description: string;
   result: string;
-  sourceUrl: string;
+  sourceUrls: string[];
 }
 
 interface Company {
@@ -30,7 +30,10 @@ const companies: Company[] = [
         date: "2024",
         description: "Позволяет бизнес-аналитикам работать с данными без написания кода: загружать наборы данных, формулировать запросы на естественном языке (например, «Найди аномалии в конверсии за Q3»). Автоматически строит визуализации, генерирует гипотезы, проверяет их на исторических данных. Интегрирован с внутренними BI-системами (например, «Навигатор BI»).",
         result: "Сокращение времени на подготовку аналитических отчётов на 50–70%. Уменьшение зависимости от IT-специалистов: аналитики самостоятельно получают данные и проверяют гипотезы.",
-        sourceUrl: "https://vladimir.mk.ru/economics/2025/11/20/ot-zaprosa-k-deshbordu-za-schitannye-sekundy-na-ai-journey-predstavlen-obnovlyonnyy-navigator-bi-sbera.html"
+        sourceUrls: [
+          "https://vladimir.mk.ru/economics/2025/11/20/ot-zaprosa-k-deshbordu-za-schitannye-sekundy-na-ai-journey-predstavlen-obnovlyonnyy-navigator-bi-sbera.html",
+          "https://developers.sber.ru/help/gigachat-api/ai-assistant-for-business"
+        ]
       }
     ]
   },
@@ -45,7 +48,10 @@ const companies: Company[] = [
         date: "2024",
         description: "Чат-интерфейс для бизнес-аналитиков: запрос на естественном языке → автоматический дашборд или таблица. Функции: генерация отчётов по продажам, клиентской базе, рискам; визуализация трендов; прогнозирование KPI на основе исторических данных.",
         result: "Снижение трудозатрат на рутинные задачи (сбор данных, форматирование отчётов) на 40%. Ускорение принятия решений за счёт мгновенного доступа к аналитике.",
-        sourceUrl: "https://finuslugi.ru/navigator/news/novosti_bankovskoj_otrasli/vtb_razrabatyvaet_ii_assistenta_dlya_prognozirovaniya_potrebnostej_klientov"
+        sourceUrls: [
+          "https://finuslugi.ru/navigator/news/novosti_bankovskoj_otrasli/vtb_razrabatyvaet_ii_assistenta_dlya_prognozirovaniya_potrebnostej_klientov",
+          "https://lenta.ru/news/2025/07/01/v-vtb-rasskazali-o-funktsiyah-ii-agentov-dlya-korporativnyh-zadach/"
+        ]
       }
     ]
   },
@@ -60,7 +66,10 @@ const companies: Company[] = [
         date: "2023–2024",
         description: "ИИ-система анализирует логи бизнес-процессов из CRM, ERP и других систем. Для бизнес-аналитиков: автоматическое выявление «узких мест» в процессах; генерация рекомендаций по оптимизации (например, сокращение этапов согласования); мониторинг выполнения KPI в реальном времени.",
         result: "Сокращение времени на анализ процессов на 60%. Повышение точности выявления проблем: система находит аномалии, которые человек пропускает.",
-        sourceUrl: "https://companies.rbc.ru/news/1wEDjxStUV/alfa-bank-i-infomaksimum-razvivayut-kontseptsiyu-ai-powered-process-mining/"
+        sourceUrls: [
+          "https://companies.rbc.ru/news/1wEDjxStUV/alfa-bank-i-infomaksimum-razvivayut-kontseptsiyu-ai-powered-process-mining/",
+          "https://infomaximum.ru/blog/alfa-bank-ai-powered-process-mining"
+        ]
       }
     ]
   },
@@ -76,7 +85,10 @@ const companies: Company[] = [
         date: "2024",
         description: "Система на базе ML прогнозирует спрос на услуги, оптимизирует распределение ресурсов. Для бизнес-аналитиков: автоматический анализ исторических данных; симуляция сценариев («Что будет, если увеличить тарифы на 10%?»); генерация отчётов с рекомендациями.",
         result: "Снижение ошибок в планировании бюджетов на 25%. Ускорение подготовки аналитических материалов в 2–3 раза.",
-        sourceUrl: "https://www.osp.ru/articles/2024/01/13058383"
+        sourceUrls: [
+          "https://www.osp.ru/articles/2024/01/13058383",
+          "https://www.kommersant.ru/doc/7216301?erid=F7NfYUJCUneP2zuFY72f"
+        ]
       }
     ]
   },
@@ -92,7 +104,9 @@ const companies: Company[] = [
         date: "2024",
         description: "Чат-бот для бизнес-аналитиков: запросы на естественном языке → данные, прогнозы, визуализации. Интеграция с внутренними базами: доступ к актуальным данным без ручного выгруза. Автоматическое построение сценариев («Как изменится прибыль при росте ставки на 2%?»).",
         result: "Сокращение времени на подготовку аналитических выводов на 45%. Повышение точности прогнозов за счёт анализа больших массивов данных.",
-        sourceUrl: "https://infomaximum.ru/blog/processtech2024"
+        sourceUrls: [
+          "https://infomaximum.ru/blog/processtech2024"
+        ]
       }
     ]
   }
@@ -185,16 +199,24 @@ const Index = () => {
                         </p>
                       </div>
                       
-                      <a
-                        href={solution.sourceUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs font-medium transition-colors inline-flex items-center gap-1 hover:underline"
-                        style={{ color: `hsl(var(--company-${company.solutionColor.replace('company-', '')}))` }}
-                      >
-                        Источник
-                        <Icon name="ExternalLink" size={12} />
-                      </a>
+                      <div className="flex flex-wrap gap-2">
+                        {solution.sourceUrls.map((url, urlIdx) => (
+                          <a
+                            key={urlIdx}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs font-medium transition-colors inline-flex items-center gap-1 hover:underline px-2 py-1 rounded border"
+                            style={{ 
+                              color: `hsl(var(--company-${company.solutionColor.replace('company-', '')}))`,
+                              borderColor: `hsl(var(--company-${company.solutionColor.replace('company-', '')}) / 0.3)`
+                            }}
+                          >
+                            Источник {solution.sourceUrls.length > 1 ? urlIdx + 1 : ''}
+                            <Icon name="ExternalLink" size={12} />
+                          </a>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </div>
