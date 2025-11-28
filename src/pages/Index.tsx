@@ -209,7 +209,7 @@ const Index = () => {
               </CardHeader>
               
               <CardContent className="p-5">
-                <div className="space-y-4">
+                <div className={`space-y-4 ${company.solutions.length > 3 ? 'max-h-[600px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-muted-foreground/30 scrollbar-track-transparent hover:scrollbar-thumb-muted-foreground/50' : ''}`}>
                   {company.solutions.map((solution, sIdx) => (
                     <div
                       key={sIdx}
