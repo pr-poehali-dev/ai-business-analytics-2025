@@ -30,7 +30,7 @@ const companies: Company[] = [
         date: "2024",
         description: "Позволяет бизнес-аналитикам работать с данными без написания кода: загружать наборы данных, формулировать запросы на естественном языке (например, «Найди аномалии в конверсии за Q3»). Автоматически строит визуализации, генерирует гипотезы, проверяет их на исторических данных. Интегрирован с внутренними BI-системами (например, «Навигатор BI»).",
         result: "Сокращение времени на подготовку аналитических отчётов на 50–70%. Уменьшение зависимости от IT-специалистов: аналитики самостоятельно получают данные и проверяют гипотезы.",
-        sourceUrl: "https://www.sberbank.ru/ru/press_center/all/article?newsID=analytics-2-0"
+        sourceUrl: "https://vladimir.mk.ru/economics/2025/11/20/ot-zaprosa-k-deshbordu-za-schitannye-sekundy-na-ai-journey-predstavlen-obnovlyonnyy-navigator-bi-sbera.html"
       }
     ]
   },
@@ -45,7 +45,7 @@ const companies: Company[] = [
         date: "2024",
         description: "Чат-интерфейс для бизнес-аналитиков: запрос на естественном языке → автоматический дашборд или таблица. Функции: генерация отчётов по продажам, клиентской базе, рискам; визуализация трендов; прогнозирование KPI на основе исторических данных.",
         result: "Снижение трудозатрат на рутинные задачи (сбор данных, форматирование отчётов) на 40%. Ускорение принятия решений за счёт мгновенного доступа к аналитике.",
-        sourceUrl: "https://www.vtb.ru/about/press-center/news/ai-assistant-analytics/"
+        sourceUrl: "https://finuslugi.ru/navigator/news/novosti_bankovskoj_otrasli/vtb_razrabatyvaet_ii_assistenta_dlya_prognozirovaniya_potrebnostej_klientov"
       }
     ]
   },
@@ -92,7 +92,7 @@ const companies: Company[] = [
         date: "2024",
         description: "Чат-бот для бизнес-аналитиков: запросы на естественном языке → данные, прогнозы, визуализации. Интеграция с внутренними базами: доступ к актуальным данным без ручного выгруза. Автоматическое построение сценариев («Как изменится прибыль при росте ставки на 2%?»).",
         result: "Сокращение времени на подготовку аналитических выводов на 45%. Повышение точности прогнозов за счёт анализа больших массивов данных.",
-        sourceUrl: "https://www.gazprombank.ru/press/news/ai-assistant-2024/"
+        sourceUrl: "https://infomaximum.ru/blog/processtech2024"
       }
     ]
   }
@@ -204,8 +204,67 @@ const Index = () => {
         </div>
       </div>
 
+      <div className="container mx-auto px-4 pb-16">
+        <Card className="bg-gradient-to-br from-card via-card to-muted/30 border-2 border-neon-cyan/20 shadow-2xl overflow-hidden">
+          <CardHeader className="bg-gradient-to-r from-neon-cyan/10 via-neon-purple/10 to-neon-green/10 border-b border-neon-cyan/20 pb-6">
+            <div className="flex items-center gap-3 mb-2">
+              <Icon name="Lightbulb" size={32} className="text-neon-cyan" />
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-green bg-clip-text text-transparent">
+                Ключевые выводы
+              </h2>
+            </div>
+          </CardHeader>
+          <CardContent className="p-8 space-y-6">
+            <div className="flex items-start gap-4">
+              <Icon name="TrendingUp" size={24} className="text-neon-purple mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-xl font-bold text-neon-purple mb-2">Основной тренд</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Банки лидируют в внедрении ИИ для бизнес-аналитиков (Сбербанк, ВТБ, Альфа-Банк, Газпромбанк).
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <Icon name="Settings" size={24} className="text-neon-green mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-xl font-bold text-neon-green mb-3">Главные функции ИИ-решений</h3>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <Icon name="CheckCircle2" size={18} className="text-neon-green mt-0.5 flex-shrink-0" />
+                    <span>автоматизация сбора и анализа данных</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="CheckCircle2" size={18} className="text-neon-green mt-0.5 flex-shrink-0" />
+                    <span>генерация визуализаций и отчётов</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="CheckCircle2" size={18} className="text-neon-green mt-0.5 flex-shrink-0" />
+                    <span>прогнозирование KPI и сценариев</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="CheckCircle2" size={18} className="text-neon-green mt-0.5 flex-shrink-0" />
+                    <span>выявление аномалий в процессах</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <Icon name="Award" size={24} className="text-neon-orange mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-xl font-bold text-neon-orange mb-2">Результаты</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Сокращение времени на рутину на <span className="font-bold text-neon-orange">40–70%</span>, повышение точности аналитики.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
       <footer className="text-center py-8 px-4 border-t border-border text-muted-foreground text-sm font-medium">
-        © 2025 | Подготовлено для ТОП-менеджмента | Данные актуальны на апрель 2025 года
+        © 2025 | Подготовлено для ТОП-менеджмента | Данные актуальны на ноябрь 2025 года
       </footer>
     </div>
   );
