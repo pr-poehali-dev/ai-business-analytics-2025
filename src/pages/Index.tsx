@@ -111,7 +111,7 @@ const companiesGeneralOptimization: Company[] = [
           { text: "Формирование заключительного отчета с экономически обоснованными рекомендациями по оптимизации" }
         ],
         result: "Сокращение времени выполнения процессов на 40%, снижение издержек на 25%, увеличение качества выполнения процессов на 35%. Технология направлена на улучшение производственных процессов в целом, а не непосредственно на оптимизацию работы бизнес-аналитиков.",
-        sourceUrl: "https://www.ramax.ru/directions/povysheni"
+        sourceUrl: "https://www.ramax.ru/projects/bank-vtb-24-povysil-effektivnost-biznes-protsessov-svoey-roznichnoy-seti-s-pomoshchyu-tekhnologii-pr/"
       }
     ]
   }
