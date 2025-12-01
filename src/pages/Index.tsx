@@ -409,16 +409,6 @@ const Index = () => {
                         borderColor: `hsl(var(--company-${company.solutionColor.replace('company-', '')}))`,
                       }}
                     >
-                      {solution.imageUrl && (
-                        <div className="mb-4 -mx-5 -mt-5 rounded-t-xl overflow-hidden">
-                          <img 
-                            src={solution.imageUrl} 
-                            alt={solution.title}
-                            className="w-full h-auto object-cover"
-                          />
-                        </div>
-                      )}
-                      
                       <div className="flex items-start gap-2 mb-3">
                         <Icon 
                           name="Bot" 
