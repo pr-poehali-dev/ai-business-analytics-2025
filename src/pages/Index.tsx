@@ -13,6 +13,7 @@ interface AISolution {
   result: string;
   sourceUrl: string;
   imageUrl?: string;
+  imageDescription?: string;
 }
 
 interface Company {
@@ -57,6 +58,8 @@ const companiesGeneralOptimization: Company[] = [
       {
         title: "ИИ-агент для платформы Process Mining",
         description: "Пользователь загружает набор данных и формулирует задачу, а платформа проводит аналитику и предоставляет детализированный отчет с выявленными проблемами, возможными причинами и рекомендациями их решения.",
+        imageUrl: "https://cdn.poehali.dev/files/a609e06c-3aa3-4638-b877-fd678bb3158f.png",
+        imageDescription: "Пользователь загружает набор данных и формулирует задачу, а платформа проводит аналитику и предоставляет детализированный отчет с выявленными проблемами, возможными причинами и рекомендациями их решения. (полезно для предприятий, связанных например, с поставками товаров).",
         features: [
           { text: "Сбор данных о каждом этапе процесса из информационных систем компании" },
           { text: "Воссоздание реальной модели всего бизнес-процесса с помощью технологии искусственного интеллекта" },
@@ -70,6 +73,8 @@ const companiesGeneralOptimization: Company[] = [
       {
         title: "Платформа «Аналитика 2.0» с ИИ-ассистентом",
         description: "Позволяет бизнес-аналитикам работать с данными без написания кода",
+        imageUrl: "https://cdn.poehali.dev/files/f89fb840-3a46-406c-ae3e-be8944f946a8.png",
+        imageDescription: "Платформа аналитики и визуализации больших данных",
         features: [
           { text: "Загружать наборы данных" },
           { text: "Формулировать запросы на естественном языке (например, «Найди аномалии в конверсии за Q3»)" },
@@ -83,6 +88,8 @@ const companiesGeneralOptimization: Company[] = [
       {
         title: "SaluteRPA — программный продукт для анализа больших данных с ИИ",
         description: "SaluteRPA автоматизирует рутинные задачи аналитиков, такие как конвертация изображений в текст, поиск данных и извлечение информации для дальнейшей работы. Программный продукт представляет собой платформу для управления программными алгоритмами (роботами) на виртуальных рабочих станциях.",
+        imageUrl: "https://cdn.poehali.dev/files/8ca09b17-ad2e-4436-a7d6-68f112b70869.png",
+        imageDescription: "Программный продукт представляет собой платформу для управления программными алгоритмами (роботами) на виртуальных рабочих станциях. Роботы умеют извлекать набор данных, необходимых для дальнейшей работы специалиста. Встроенная нейросетевая модель GigaChat позволяет быстро создавать и настраивать сценарии автоматизации.",
         features: [
           { text: "Роботы умеют извлекать набор данных, необходимых для дальнейшей работы специалиста" },
           { text: "Встроенная нейросетевая модель GigaChat позволяет быстро создавать и настраивать сценарии автоматизации" },
@@ -373,10 +380,10 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="space-y-12">
             {companiesGeneralOptimization.map((company, idx) => (
+              <div key={idx} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <Card
-              key={idx}
               className="bg-card border-border hover:shadow-2xl hover:shadow-neon-cyan/10 hover:-translate-y-2 transition-all duration-400 overflow-hidden animate-fade-in"
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
@@ -471,6 +478,42 @@ const Index = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {company.name === "Сбербанк" && company.solutions.some(s => s.imageUrl) && (
+              <Card className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border-2 border-green-300 dark:border-green-700 shadow-lg sticky top-4 self-start">
+                <CardContent className="p-5">
+                  <div className="flex items-start gap-3 mb-4">
+                    <Icon name="ImageIcon" size={22} className="text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-lg font-bold text-green-900 dark:text-green-100 mb-1">Примеры интерфейсов решений</h3>
+                      <p className="text-xs text-green-900/80 dark:text-green-100/80">
+                        Визуальная демонстрация платформ Сбербанка
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="h-[600px] overflow-y-auto pr-2 space-y-5 scrollbar-thin scrollbar-thumb-green-300 dark:scrollbar-thumb-green-700 scrollbar-track-transparent">
+                    {company.solutions.filter(s => s.imageUrl).map((solution, sIdx) => (
+                      <div key={sIdx}>
+                        <div className="rounded-lg overflow-hidden border-2 border-green-300 dark:border-green-700 shadow-sm">
+                          <img 
+                            src={solution.imageUrl} 
+                            alt={solution.title}
+                            className="w-full h-auto"
+                          />
+                        </div>
+                        {solution.imageDescription && (
+                          <p className="text-xs text-green-900/70 dark:text-green-100/70 mt-2 italic">
+                            {solution.imageDescription}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+              </div>
           ))}
           </div>
         </div>
