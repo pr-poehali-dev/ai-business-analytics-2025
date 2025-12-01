@@ -270,25 +270,95 @@ const Index = () => {
 
           <Card className="mt-8 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 border-2 border-blue-300 dark:border-blue-700 shadow-lg">
             <CardContent className="p-6">
-              <div className="flex items-start gap-4 mb-4">
+              <div className="flex items-start gap-4 mb-6">
                 <Icon name="Lightbulb" size={24} className="text-blue-600 dark:text-blue-400 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100 mb-2">Примеры использования ИИ-функционала</h3>
+                  <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100 mb-2">Примеры использования ИИ-функционала от Atlassian</h3>
                   <p className="text-sm text-blue-900/80 dark:text-blue-100/80">
                     Наглядная демонстрация AI Requirements Copilot в действии — как ИИ помогает бизнес-аналитикам создавать требования
                   </p>
                 </div>
               </div>
-              <div className="rounded-lg overflow-hidden border-2 border-blue-300 dark:border-blue-700 shadow-md">
-                <img 
-                  src="https://cdn.poehali.dev/files/26ea7eb6-70d4-4d01-96b1-67f718f61ac3.png" 
-                  alt="Пример работы AI Requirements Copilot в Jira"
-                  className="w-full h-auto"
-                />
+
+              <div className="space-y-6">
+                <div>
+                  <div className="rounded-lg overflow-hidden border-2 border-blue-300 dark:border-blue-700 shadow-md">
+                    <img 
+                      src="https://cdn.poehali.dev/files/26ea7eb6-70d4-4d01-96b1-67f718f61ac3.png" 
+                      alt="Интерфейс AI Requirements Copilot в Jira с разделами для настройки пространств"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <p className="text-xs text-blue-900/70 dark:text-blue-100/70 mt-3 italic">
+                    В task есть отдельный раздел с кнопками (аналогами пространств DeepSeek). Их можно настраивать и добавлять новые
+                  </p>
+                </div>
+
+                <div>
+                  <div className="rounded-lg overflow-hidden border-2 border-blue-300 dark:border-blue-700 shadow-md">
+                    <img 
+                      src="https://cdn.poehali.dev/files/730ed91d-72b0-4db0-9591-1d40e46b5dcf.png" 
+                      alt="Генерация User Story с помощью AI"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <p className="text-xs text-blue-900/70 dark:text-blue-100/70 mt-3 italic">
+                    Окно вывода текста от ИИ — срок ввода промпта по генерации/корректировки User Story
+                  </p>
+                </div>
+
+                <div>
+                  <div className="rounded-lg overflow-hidden border-2 border-blue-300 dark:border-blue-700 shadow-md">
+                    <img 
+                      src="https://cdn.poehali.dev/files/1ca2ccd4-61e6-4be5-8a06-86d25c641449.png" 
+                      alt="Генерация функциональных требований с помощью AI"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <p className="text-xs text-blue-900/70 dark:text-blue-100/70 mt-3 italic">
+                    Окно вывода текста от ИИ — срок ввода промпта по генерации/корректировки Функциональных требований
+                  </p>
+                </div>
+
+                <div>
+                  <div className="rounded-lg overflow-hidden border-2 border-blue-300 dark:border-blue-700 shadow-md">
+                    <img 
+                      src="https://cdn.poehali.dev/files/1d197271-555d-4038-8c99-63e83cc19193.png" 
+                      alt="Генерация тест-кейсов с помощью AI"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <p className="text-xs text-blue-900/70 dark:text-blue-100/70 mt-3 italic">
+                    Окно вывода текста от ИИ — срок ввода промпта по генерации/корректировки тест-кейсов
+                  </p>
+                </div>
+
+                <div>
+                  <div className="rounded-lg overflow-hidden border-2 border-blue-300 dark:border-blue-700 shadow-md">
+                    <img 
+                      src="https://cdn.poehali.dev/files/a4b70e50-1b67-4b50-8205-83688042fd47.png" 
+                      alt="Генерация Review с помощью AI"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <p className="text-xs text-blue-900/70 dark:text-blue-100/70 mt-3 italic">
+                    Окно вывода текста от ИИ — срок ввода промпта по генерации/корректировки Review от ИИ
+                  </p>
+                </div>
+
+                <div>
+                  <div className="rounded-lg overflow-hidden border-2 border-blue-300 dark:border-blue-700 shadow-md">
+                    <img 
+                      src="https://cdn.poehali.dev/files/780d4820-3fa9-43a0-b12e-970eee7a450e.png" 
+                      alt="Генерация критериев приемки с помощью AI"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <p className="text-xs text-blue-900/70 dark:text-blue-100/70 mt-3 italic">
+                    Окно вывода текста от ИИ — срок ввода промпта по генерации/корректировки Критериев Приемки
+                  </p>
+                </div>
               </div>
-              <p className="text-xs text-blue-900/70 dark:text-blue-100/70 mt-3 italic">
-                На скриншоте: AI Requirements Copilot автоматически генерирует функциональные требования для мобильного приложения в Jira
-              </p>
             </CardContent>
           </Card>
         </div>
