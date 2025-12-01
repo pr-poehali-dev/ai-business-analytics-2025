@@ -23,7 +23,7 @@ interface Company {
   solutions: AISolution[];
 }
 
-const companies: Company[] = [
+const companiesDirectBA: Company[] = [
   {
     name: "Atlassian",
     industry: "Разработка ПО для работы и управления проектами",
@@ -44,7 +44,10 @@ const companies: Company[] = [
         sourceUrl: "https://marketplace.atlassian.com/apps/1234191/ai-requirements-copilot-for-jira"
       }
     ]
-  },
+  }
+];
+
+const companiesGeneralOptimization: Company[] = [
   {
     name: "Сбербанк",
     industry: "Банковская сфера",
@@ -154,8 +157,130 @@ const Index = () => {
           </CardContent>
         </Card>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {companies.map((company, idx) => (
+        <div className="mb-12">
+          <div className="mb-6">
+            <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">
+              Прямое влияние на работу бизнес-аналитиков
+            </h2>
+            <p className="text-muted-foreground">
+              Решения, непосредственно оптимизирующие выполнение обязанностей бизнес-аналитиков
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {companiesDirectBA.map((company, idx) => (
+              <Card
+                key={idx}
+                className="bg-card border-border hover:shadow-2xl hover:shadow-neon-cyan/10 hover:-translate-y-2 transition-all duration-400 overflow-hidden animate-fade-in"
+                style={{ animationDelay: `${idx * 0.1}s` }}
+              >
+                <CardHeader className={`${company.industryColor} p-5`}>
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+                      <Icon name="Building2" size={28} className="text-white" />
+                      {company.name}
+                    </h3>
+                    <Badge className="bg-white/20 text-white backdrop-blur-sm font-semibold uppercase text-xs tracking-wide px-3 py-1">
+                      {company.industry}
+                    </Badge>
+                  </div>
+                </CardHeader>
+                
+                <CardContent className="p-5">
+                  <div className="space-y-4">
+                    {company.solutions.map((solution, sIdx) => (
+                      <div
+                        key={sIdx}
+                        className="bg-muted/50 border-2 rounded-xl p-5 hover:bg-muted transition-all duration-300"
+                        style={{
+                          borderColor: `hsl(var(--company-${company.solutionColor.replace('company-', '')}))`,
+                        }}
+                      >
+                        {solution.imageUrl && (
+                          <div className="mb-4 -mx-5 -mt-5 rounded-t-xl overflow-hidden">
+                            <img 
+                              src={solution.imageUrl} 
+                              alt={solution.title}
+                              className="w-full h-auto object-cover"
+                            />
+                          </div>
+                        )}
+                        
+                        <div className="flex items-start gap-2 mb-3">
+                          <Icon 
+                            name="Bot" 
+                            size={22} 
+                            className="mt-0.5 flex-shrink-0" 
+                            style={{ color: `hsl(var(--company-${company.solutionColor.replace('company-', '')}))` }}
+                          />
+                          <h4 
+                            className="font-bold text-lg leading-tight"
+                            style={{ color: `hsl(var(--company-${company.solutionColor.replace('company-', '')}))` }}
+                          >
+                            {solution.title}
+                          </h4>
+                        </div>
+
+                        <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
+                          {solution.description}
+                        </p>
+
+                        <div className="mb-4">
+                          <p className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">Что делает:</p>
+                          <ul className="space-y-1.5">
+                            {solution.features.map((feature, fIdx) => (
+                              <li key={fIdx} className="flex items-start gap-2 text-sm">
+                                <Icon 
+                                  name="CheckCircle2" 
+                                  size={16} 
+                                  className="mt-0.5 flex-shrink-0"
+                                  style={{ color: `hsl(var(--company-${company.solutionColor.replace('company-', '')}))` }}
+                                />
+                                <span className="text-foreground/90">{feature.text}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="mb-3 p-3 bg-background/50 rounded-lg border border-border">
+                          <p className="text-xs font-semibold mb-1 uppercase tracking-wide flex items-center gap-1.5">
+                            <Icon name="TrendingUp" size={14} />
+                            Итог анализа:
+                          </p>
+                          <p className="text-sm text-foreground/90 leading-relaxed">{solution.result}</p>
+                        </div>
+
+                        <a
+                          href={solution.sourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs hover:underline transition-colors"
+                          style={{ color: `hsl(var(--company-${company.solutionColor.replace('company-', '')}))` }}
+                        >
+                          <Icon name="ExternalLink" size={14} />
+                          Источник
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <div className="mb-6">
+            <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent">
+              Общая оптимизация бизнес-процессов
+            </h2>
+            <p className="text-muted-foreground">
+              Решения для целостной оптимизации бизнес-процессов, не затрагивающие напрямую работу бизнес-аналитиков
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {companiesGeneralOptimization.map((company, idx) => (
             <Card
               key={idx}
               className="bg-card border-border hover:shadow-2xl hover:shadow-neon-cyan/10 hover:-translate-y-2 transition-all duration-400 overflow-hidden animate-fade-in"
@@ -253,6 +378,7 @@ const Index = () => {
               </CardContent>
             </Card>
           ))}
+          </div>
         </div>
       </div>
     </div>
