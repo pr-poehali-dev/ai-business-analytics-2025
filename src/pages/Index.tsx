@@ -267,6 +267,30 @@ const Index = () => {
               </Card>
             ))}
           </div>
+
+          <Card className="mt-8 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 border-2 border-blue-300 dark:border-blue-700 shadow-lg">
+            <CardContent className="p-6">
+              <div className="flex items-start gap-4 mb-4">
+                <Icon name="Lightbulb" size={24} className="text-blue-600 dark:text-blue-400 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100 mb-2">Примеры использования ИИ-функционала</h3>
+                  <p className="text-sm text-blue-900/80 dark:text-blue-100/80">
+                    Наглядная демонстрация AI Requirements Copilot в действии — как ИИ помогает бизнес-аналитикам создавать требования
+                  </p>
+                </div>
+              </div>
+              <div className="rounded-lg overflow-hidden border-2 border-blue-300 dark:border-blue-700 shadow-md">
+                <img 
+                  src="https://cdn.poehali.dev/files/26ea7eb6-70d4-4d01-96b1-67f718f61ac3.png" 
+                  alt="Пример работы AI Requirements Copilot в Jira"
+                  className="w-full h-auto"
+                />
+              </div>
+              <p className="text-xs text-blue-900/70 dark:text-blue-100/70 mt-3 italic">
+                На скриншоте: AI Requirements Copilot автоматически генерирует функциональные требования для мобильного приложения в Jira
+              </p>
+            </CardContent>
+          </Card>
         </div>
 
         <div>
